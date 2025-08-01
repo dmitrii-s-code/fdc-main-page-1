@@ -1,0 +1,272 @@
+/* COMMON STYLES */
+
+@keyframes phone {
+    from {
+        transform: rotate(-20deg);
+    }
+
+    to {
+        transform: rotate(40deg);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e9f3f2;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #1E6C66;
+    font-size: 16px;
+    margin: 1.875em 3.125em 1.875em 3.125em;   
+}
+
+header,
+nav,
+main {
+    margin-bottom: 1.875em;
+}
+
+nav,
+article a,
+.banner-image,
+.container,
+.submit-button,
+.phone-input {
+    border-radius: 5px;
+}
+
+a {
+    color: #e9f3f2;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #bddbd8;
+}
+
+/* HEADER SECTION STYLES */
+
+header > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90px;
+}
+
+/* NAVIGATION SECTION STYLES */
+
+nav {
+    background-color: #1E6C66;
+}
+
+nav > ul { 
+    display: block;
+    text-align: center;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0.625em;
+    font-size: 1.25em;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin-bottom: 1.25em;
+}
+
+/* MAIN SECTION STYLES */
+
+section {
+    display: flex;
+    flex-direction: row;
+    gap: 1.25em;
+}
+
+article {
+    flex: 1;
+}
+
+.column-section {
+    margin-top: 1.25em;
+}
+
+.banner-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url("../images/parsley-261039_640.jpg");
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner-text,
+.container {
+    padding: 1.25em;
+}
+
+.banner-text {
+    color: white;
+    width: 70%;
+}
+
+.banner-text p {
+    font-size: 0.75em;
+}
+
+.container {
+    border: 2px dotted #1E6C66;
+}
+
+.container > h2,
+.container > img,
+.container > p {
+    margin-bottom: 1.25em;
+}
+
+.container > p {
+    hyphens: auto;
+}
+
+.container > img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container > h2 {
+    font-size: 1.25em;
+}
+
+.container > a {
+    display: block;
+    width: 100px;
+    padding: 5px 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #1e6c66;
+}
+
+.container > form {
+    text-align: center;
+}
+
+.phone-input {
+    background-color: #e9f3f2;
+    border: 2px solid #87262e;
+    color: #1E6C66;
+    outline: none;
+    padding: 4px;
+    width: 135px;
+    font-size: 0.875em;
+}
+
+.phone-input:valid {
+    border: 2px solid #1E6C66;
+}
+
+.submit-button {
+    background-color: #87262e;
+    color: #e9f3f2;
+    padding: 3px;
+    border: 2px solid #87262e;
+    font-size: 1em;
+}
+
+.submit-button:active {
+    background-color: #1E6C66;
+    border-color: #1E6C66;
+}
+
+.input-icon {
+    position: relative;
+    display: inline-block;
+    width: 28px;
+    height: 14px;
+}
+
+.input-icon::before {
+    /* Author of an original icon: https://www.svgrepo.com/svg/524807/phone */
+    content: url("../images/phone-svgrepo-com.svg"); 
+    position: absolute;
+    left: 0px;
+    bottom: -13px;
+    animation: phone 2s infinite alternate ease-in-out;
+}
+
+/* FOOTER SECTION STYLES */
+
+footer {
+    display: flex;
+    text-align: end;
+    border-top: 2px dotted #1E6C66;
+    padding-top: 10px;
+}
+
+footer div {
+    flex: 1;
+}
+
+footer img {
+    max-width: 30px;
+}
+
+.footer-logo {
+    text-align: start;
+}
+
+.copyright {
+    text-align: end;
+    align-self: center;
+}
+
+/* STYLES FOR DIFFERENT SCREEN SIZES */
+
+@media screen and (max-width: 575px) {
+    .column-section {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .column-section article {
+        flex: 1 1 280px;
+        max-width: 280px;
+    } 
+
+    footer img {
+        max-width: 20px;
+    }
+
+    body {
+        font-size: 12px;
+    }
+
+    .banner-text {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 991px) {
+    .column-section {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .column-section article {
+        flex: 1 1 55%;
+        max-width: 55%;
+    }  
+
+    body {
+        font-size: 14px;
+    }
+
+    .banner-text {
+        width: 90%;
+    }
+}
